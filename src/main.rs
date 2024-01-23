@@ -48,4 +48,14 @@ fn main() {
     board.move_down();
     println!("{}", board.display());
 
+    println!("Checking Completion");
+    println!("{}", board.is_complete());
+
+    println!("Moving Right");
+    board.move_right();
+    println!("{}", board.display());
+
+    println!("Checking Completion");
+    println!("{}", board.is_complete());
+
 }

@@ -41,9 +41,23 @@ impl Board {
 
     // }
 
-    // pub fn is_complete(&self) -> bool {
-    //     false
-    // }
+    pub fn is_complete(&self) -> bool {
+        for row in 0..4 {
+            for col in 0..4 {
+                if row == 3 && col == 3 {
+                    if self.grid[row][col] == 0 {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                if self.grid[row][col] != row * 4 + (col + 1) {
+                    return false
+                }
+            }
+        }
+        true
+    }
 
     // moves perform a move on the grid if possible, else do nothing
     pub fn move_left(&mut self) {
