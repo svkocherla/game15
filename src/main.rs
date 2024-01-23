@@ -1,6 +1,10 @@
-use std::io;
-use rand::Rng;
+mod board;
+
+use board::Board;
 
 fn main() {
-    println!("Hello, world!");
+    println!("Program Start");
+    let board = Board::new();
+    println!("Displaying initial board");
+    board.display();
 }
