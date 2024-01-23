@@ -39,6 +39,16 @@ impl Board {
         curr
     }
 
+
+    // getters for board for testing
+    pub fn get_grid(&self) -> &[[usize; 4]; 4] {
+        &self.grid
+    }
+
+    pub fn get_empty_location(&self) -> &(usize, usize) {
+        &self.empty_location
+    }
+
     // Shuffles the board to create random orientation
     pub fn shuffle(&mut self, moves: usize) {
         let mut rng = rand::thread_rng();
