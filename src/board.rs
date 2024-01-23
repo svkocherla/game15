@@ -23,6 +23,7 @@ impl Board {
         Board { grid, empty_location }
     }
 
+    #[allow(dead_code)]
     pub fn display(&self) -> String {
         let mut curr = String::new();
         for row in &self.grid {
@@ -41,15 +42,18 @@ impl Board {
 
 
     // getters for board for testing
+    #[allow(dead_code)]
     pub fn get_grid(&self) -> &[[usize; 4]; 4] {
         &self.grid
     }
 
+    #[allow(dead_code)]
     pub fn get_empty_location(&self) -> &(usize, usize) {
         &self.empty_location
     }
 
     // Shuffles the board to create random orientation
+    #[allow(dead_code)]
     pub fn shuffle(&mut self, moves: usize) {
         let mut rng = rand::thread_rng();
         for _ in 0..moves {
@@ -65,6 +69,7 @@ impl Board {
         }
     }
 
+    #[allow(dead_code)]
     pub fn is_complete(&self) -> bool {
         for row in 0..4 {
             for col in 0..4 {
