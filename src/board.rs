@@ -1,3 +1,5 @@
+use rand::Rng;
+
 // 4 by 4 board
 pub struct Board {
     grid: [[usize; 4]; 4],
@@ -37,9 +39,21 @@ impl Board {
         curr
     }
 
-    // pub fn shuffle(&mut self, moves: usize) {
+    // Shuffles the board to create random orientation
+    pub fn shuffle(&mut self, moves: usize) {
+        let mut rng = rand::thread_rng();
+        for _ in 0..moves {
+            let rng_move = rng.gen::<usize>() % 4;
 
-    // }
+            match rng_move {
+                0 => self.move_left(),
+                1 => self.move_right(),
+                2 => self.move_up(),
+                3 => self.move_down(),
+                _ => unreachable!(), // cause rust is angry at me
+            }
+        }
+    }
 
     pub fn is_complete(&self) -> bool {
         for row in 0..4 {

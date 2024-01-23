@@ -1,9 +1,9 @@
 mod board;
-
 use board::Board;
 
 fn main() {
     println!("Program Start");
+
 
     let mut board = Board::new();
     println!("Displaying initial board");
@@ -58,4 +58,7 @@ fn main() {
     println!("Checking Completion");
     println!("{}", board.is_complete());
 
+    println!("Shuffling Board Randomly 10 times");
+    board.shuffle(10);
+    println!("{}", board.display());
 }
