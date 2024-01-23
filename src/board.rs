@@ -28,7 +28,7 @@ impl Board {
         for row in &self.grid {
             for &num in row {
                 if num == 0 {
-                    curr.push_str("  #");
+                    curr.push_str("   ");
                 } else {
                     curr.push_str(&format!("{:3}", num));
                 }
