@@ -8,7 +8,7 @@ fn main() {
     println!("Use wasd to move and q to quit");
 
     // create grid and shuffle
-    const SHUFFLE_CONSTANT: usize = 1;
+    const SHUFFLE_CONSTANT: usize = 100;
     let mut board = Board::new();
     board.shuffle(SHUFFLE_CONSTANT);
 
