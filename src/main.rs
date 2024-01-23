@@ -10,7 +10,9 @@ fn main() {
     // create grid and shuffle
     const SHUFFLE_CONSTANT: usize = 100;
     let mut board = Board::new();
-    board.shuffle(SHUFFLE_CONSTANT);
+    while board.is_complete() {
+        board.shuffle(SHUFFLE_CONSTANT);
+    }
 
     println!("Initial Board");
     print!("{}", board.display());
@@ -32,7 +34,7 @@ fn main() {
             "s" => board.move_up(),
             "d" => board.move_left(),
             "q" => break,
-            _ => println!("You did not enter WASD or Q!"),
+            _ => println!("You did not enter wasd or q!"),
         }
 
         input.clear();
@@ -43,7 +45,7 @@ fn main() {
             break;
         }
 
-        println!("Enter WASD or Q!");
+        println!("Enter wasd or q!");
     }
 
     println!("Thanks for playing");
